@@ -52,10 +52,10 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/dotnet-web-api-6:7.0 .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/dotnet-web-api-6:8.0 .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/dotnet-web-api-6:7.0
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/dotnet-web-api-6:8.0
 
 
 
