@@ -59,3 +59,8 @@ C:\projects\SuperHeroNG\SuperHeroAPI\obj\Debug\net6.0\refint\SuperHeroAPI.dll
 C:\projects\SuperHeroNG\SuperHeroAPI\obj\Debug\net6.0\SuperHeroAPI.pdb
 C:\projects\SuperHeroNG\SuperHeroAPI\obj\Debug\net6.0\SuperHeroAPI.genruntimeconfig.cache
 C:\projects\SuperHeroNG\SuperHeroAPI\obj\Debug\net6.0\ref\SuperHeroAPI.dll
+C:\projects\SuperHeroNG\SuperHeroAPI\bin\Debug\net6.0\isaapi\web.config
+C:\projects\SuperHeroNG\SuperHeroAPI\bin\Debug\net6.0\isaapi\appsettings.Development.json
+C:\projects\SuperHeroNG\SuperHeroAPI\bin\Debug\net6.0\isaapi\appsettings.json
+C:\projects\SuperHeroNG\SuperHeroAPI\bin\Debug\net6.0\isaapi\SuperHeroAPI.deps.json
+C:\projects\SuperHeroNG\SuperHeroAPI\bin\Debug\net6.0\isaapi\SuperHeroAPI.runtimeconfig.json

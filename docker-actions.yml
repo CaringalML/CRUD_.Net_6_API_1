@@ -1,0 +1,38 @@
+name: .NET
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      # Uncomment the following lines if you want to work with AWS ECR
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+          # Replace with your AWS region, e.g., us-west-2
+          aws-region: ap-northeast-1 
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        run: |
+          aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 407095008364.dkr.ecr.ap-northeast-1.amazonaws.com
+
+      - name: Build and push Docker image to ECR
+        run: |
+          docker build -t backend .
+          docker tag backend:latest 407095008364.dkr.ecr.ap-northeast-1.amazonaws.com/backend:latest
+          docker push 407095008364.dkr.ecr.ap-northeast-1.amazonaws.com/backend:latest
