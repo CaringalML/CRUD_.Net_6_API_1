@@ -7,7 +7,7 @@ EXPOSE 5000
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["SuperHeroAPI.csproj", "./"]
-RUN dotnet restore "super-hero-dotnet-webapi/SuperHeroAPI.csproj"
+RUN dotnet restore "SuperHeroAPI.csproj"
 COPY . .
 WORKDIR "/src/super-hero-dotnet-webapi"
 RUN dotnet build "SuperHeroAPI.csproj" -c Release -o /app/build
