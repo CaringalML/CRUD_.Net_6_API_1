@@ -1,31 +1,23 @@
-# See https://aka.ms/customizecontainer to learn how to customize your debug container
-# and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+# Use the official .NET SDK image for building
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
-# Use Alpine as the base image
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS base
-WORKDIR /app
+# Set the working directory to /src
+WORKDIR /src
 
-EXPOSE 5000
-
-# Use Alpine as the base image for build
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
-WORKDIR /src 
-
-RUN dotnet restore 
+# Copy the project files into the container
 COPY . .
+
+# Navigate to the project directory
 WORKDIR "/src/super-hero-dotnet-webapi"
-RUN dotnet build "SuperHeroAPI.csproj" -c Release -o /app/build
 
-# Continue using Alpine for the publish stage
-FROM build AS publish
-RUN dotnet publish "SuperHeroAPI.csproj" -c Release -o /app/publish /p:UseAppHost=false
+# Restore dependencies using dotnet restore
+RUN dotnet restore
 
-# Use Alpine as the base image for the final stage
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS final
+# Build the application
+RUN dotnet build -c Release -o /app
+
+# Set the working directory for the runtime image
 WORKDIR /app
-COPY --from=publish /app/publish .
 
-ENV ASPNETCORE_URLS=http://+:5000
-ENV ASPNETCORE_ENVIRONMENT=Development
-
+# Specify the entry point for the runtime image
 ENTRYPOINT ["dotnet", "SuperHeroAPI.dll"]
