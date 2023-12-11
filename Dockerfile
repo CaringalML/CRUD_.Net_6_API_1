@@ -11,7 +11,7 @@ EXPOSE 5000
 FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
 WORKDIR /src 
 
-RUN dotnet restore "SuperHeroAPI.csproj"
+RUN dotnet restore 
 COPY . .
 WORKDIR "/src/super-hero-dotnet-webapi"
 RUN dotnet build "SuperHeroAPI.csproj" -c Release -o /app/build
