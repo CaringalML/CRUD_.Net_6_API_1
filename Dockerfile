@@ -9,7 +9,7 @@ WORKDIR /src
 COPY ["SuperHeroAPI.csproj", "./"]
 RUN dotnet restore "SuperHeroAPI.csproj"
 COPY . .
-WORKDIR "/src/super-hero-dotnet-webapi"
+WORKDIR /src
 RUN dotnet build "SuperHeroAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
