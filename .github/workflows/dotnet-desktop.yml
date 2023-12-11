@@ -26,8 +26,8 @@ jobs:
       - name: Install dotnet ef
         run: dotnet tool install --global dotnet-ef --version 6.0.6  
 
-      # - name: Migrate database
-        # run: dotnet ef database update
+      - name: Migrate database
+        run: dotnet ef database update
 
 
 
