@@ -21,24 +21,20 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: restore
+      - name: Restore dependencies
         run: dotnet restore
 
-      - name: build
+      - name: Build
         run: dotnet build
 
-      
+      - name: Run tests
+        run: dotnet test
 
       - name: Install dotnet ef
         run: dotnet tool install --global dotnet-ef --version 6.0.6  
 
       - name: Migrate database
         run: dotnet ef database update
-
-
-
-
-
 
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
