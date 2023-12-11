@@ -6,7 +6,7 @@ EXPOSE 5000
 # Use SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["super-hero-dotnet-webapi/SuperHeroAPI.csproj", "./"]
+COPY ["SuperHeroAPI.csproj", "./"]
 RUN dotnet restore "super-hero-dotnet-webapi/SuperHeroAPI.csproj"
 COPY . .
 WORKDIR "/src/super-hero-dotnet-webapi"
