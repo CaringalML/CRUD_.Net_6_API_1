@@ -2,22 +2,19 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
 # Set the working directory to /src
-WORKDIR /src
+WORKDIR /super-hero-dotnet-webapi
 
 # Copy the project files into the container
 COPY . .
-
-# Navigate to the project directory
-WORKDIR "/src/super-hero-dotnet-webapi"
 
 # Restore dependencies using dotnet restore
 RUN dotnet restore
 
 # Build the application
-RUN dotnet build -c Release -o /app
+RUN dotnet publish -c Release -o site
 
 # Set the working directory for the runtime image
-WORKDIR /app
+WORKDIR /site
 
 # Specify the entry point for the runtime image
 ENTRYPOINT ["dotnet", "SuperHeroAPI.dll"]
