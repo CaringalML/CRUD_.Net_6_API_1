@@ -16,7 +16,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddCors(options => options.AddPolicy(name: "SuperHeroOrigins",
     policy =>
     {
-        policy.WithOrigins("http://localhost:4200","https://repsoft-lawrence.click","https://www.repsoft-lawrence.click").AllowAnyMethod().AllowAnyHeader();
+        policy.WithOrigins("http://localhost:4200","https://frontend.lawrence-kps.online","https://repsoft-lawrence.click","https://www.repsoft-lawrence.click").AllowAnyMethod().AllowAnyHeader();
     }));
 
 var app = builder.Build();
