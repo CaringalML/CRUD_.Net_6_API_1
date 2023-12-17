@@ -66,6 +66,6 @@ jobs:
            aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 939737198590.dkr.ecr.ap-southeast-1.amazonaws.com
       - name: Build and push Docker image to ECR
         run: |
-           docker build -t dotnet .
-           docker tag dotnet:latest 939737198590.dkr.ecr.ap-southeast-1.amazonaws.com/dotnet:latest
-           docker push 939737198590.dkr.ecr.ap-southeast-1.amazonaws.com/dotnet:latest
+           docker build -t dotnet:1.0 .
+           docker tag dotnet:1.0 939737198590.dkr.ecr.ap-southeast-1.amazonaws.com/dotnet:1.0
+           docker push 939737198590.dkr.ecr.ap-southeast-1.amazonaws.com/dotnet:1.0
