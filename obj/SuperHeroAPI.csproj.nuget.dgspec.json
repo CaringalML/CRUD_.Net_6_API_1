@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\SuperHeroNG\\SuperHeroAPI\\SuperHeroAPI.csproj": {}
+    "C:\\Dotnet-CRUD\\CRUD_.Net_6_API_1\\SuperHeroAPI.csproj": {}
   },
   "projects": {
-    "C:\\projects\\SuperHeroNG\\SuperHeroAPI\\SuperHeroAPI.csproj": {
+    "C:\\Dotnet-CRUD\\CRUD_.Net_6_API_1\\SuperHeroAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\SuperHeroNG\\SuperHeroAPI\\SuperHeroAPI.csproj",
+        "projectUniqueName": "C:\\Dotnet-CRUD\\CRUD_.Net_6_API_1\\SuperHeroAPI.csproj",
         "projectName": "SuperHeroAPI",
-        "projectPath": "C:\\projects\\SuperHeroNG\\SuperHeroAPI\\SuperHeroAPI.csproj",
-        "packagesPath": "C:\\Users\\63995\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\SuperHeroNG\\SuperHeroAPI\\obj\\",
+        "projectPath": "C:\\Dotnet-CRUD\\CRUD_.Net_6_API_1\\SuperHeroAPI.csproj",
+        "packagesPath": "C:\\Users\\lawre\\.nuget\\packages\\",
+        "outputPath": "C:\\Dotnet-CRUD\\CRUD_.Net_6_API_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\63995\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\lawre\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.417\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.423\\RuntimeIdentifierGraph.json"
         }
       }
     }
