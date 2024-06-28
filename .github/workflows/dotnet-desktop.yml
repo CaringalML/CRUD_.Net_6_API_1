@@ -65,7 +65,6 @@ jobs:
         run: |
            aws ecr get-login-password --region ap-northeast-3 | docker login --username AWS --password-stdin 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com
 
-
       - name: Build and push Docker image to ECR
         run: |
            docker build -t dotnet-api .
