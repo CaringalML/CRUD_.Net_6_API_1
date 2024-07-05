@@ -36,7 +36,7 @@ jobs:
       - name: Migrate database
         run: dotnet ef database update
 
-      # - name: Login to Docker Hub
+      # - name: Login to Docker Hub Repositories
       #   run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       # - name: Build Docker image
