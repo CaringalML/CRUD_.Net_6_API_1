@@ -67,6 +67,6 @@ jobs:
 
       - name: Build and push Docker image to ECR
         run: |
-           docker build -t dotnet-api .
-           docker tag dotnet-api:latest 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet-api:1.0
-           docker push 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet-api:1.0
+           docker build -t dotnet2024api .
+           docker tag dotnet2024api:latest 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet2024api:1.0
+           docker push 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet2024api:1.0
