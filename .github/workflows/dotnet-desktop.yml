@@ -36,37 +36,37 @@ jobs:
       - name: Migrate database
         run: dotnet ef database update
 
-      # - name: Login to Docker Hub Repositories
-      #   run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login to Docker Hub Repositories
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
-      # - name: Build Docker image
-      #   run: docker build -t ${{ secrets.DOCKER_USERNAME }}/crud-net-6-api-1:3.0 .
+      - name: Build Docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/crud-net-6-api-1:4.0 .
 
-      # - name: Push Docker image
-      #   run: docker push ${{ secrets.DOCKER_USERNAME }}/crud-net-6-api-1:3.0
-
-
+      - name: Push Docker image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/crud-net-6-api-1:4.0
 
 
 
 
 
 
-      # Uncomment the following lines if you want to work with AWS ECR
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-           aws-region: ap-northeast-3 # Replace with your AWS region, e.g., us-west-2
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        run: |
-           aws ecr get-login-password --region ap-northeast-3 | docker login --username AWS --password-stdin 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com
 
-      - name: Build and push Docker image to ECR
-        run: |
-           docker build -t dotnet-api .
-           docker tag dotnet-api:latest 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet-api:2.0
-           docker push 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet-api:2.0
+      # # Uncomment the following lines if you want to work with AWS ECR
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #      aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #      aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #      aws-region: ap-northeast-3 # Replace with your AWS region, e.g., us-west-2
+
+      # - name: Login to Amazon ECR
+      #   id: login-ecr
+      #   run: |
+      #      aws ecr get-login-password --region ap-northeast-3 | docker login --username AWS --password-stdin 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com
+
+      # - name: Build and push Docker image to ECR
+      #   run: |
+      #      docker build -t dotnet-api .
+      #      docker tag dotnet-api:latest 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet-api:2.0
+      #      docker push 939737198590.dkr.ecr.ap-northeast-3.amazonaws.com/dotnet-api:2.0
